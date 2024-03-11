@@ -13,7 +13,7 @@
         combos {
           compatible = "zmk,combos";
           combo_ent {
-            timeout-ms = <50>;
+            timeout-ms = <150>;
             key-positions = <32 33>;
             bindings = <&kp RET>;
           };
