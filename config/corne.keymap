@@ -10,6 +10,14 @@
 
 / {
         chosen { zmk,matrix_transform = &five_column_transform; };
+        combos {
+          compatible = "zmk,combos";
+          combo_ent {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp ENT>;
+          }
+        }
         behaviors {
             bhm: balanced_homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
@@ -28,7 +36,7 @@
 // |   Q        |      W     |       E    |      R     |  T  |   |  Y  |     U      |     I     |     O     |     P     |
 // |   A, CTRL  |    S, ALT  |    D, GUI  |  F, SHIFT  |  G  |   |  H  |  J, SHIFT  |  K, GUI   |  L, ALT   |  ;, CTRL  |
 // |   Z        |      X     |       C    |      V     |  B  |   |  N  |     M      |     ,     |     .     |     /     |
-//                           |    BSPC    |     LWR    | SPC |   | ENT |    RSE     |    ALT    |
+//                           |    BSPC    |     LWR    | SPC |ENT| SPC |    RSE     |    ALT    |
                         bindings = <
    &kp Q        &kp W       &kp E       &kp R         &kp T      &kp Y   &kp U          &kp I       &kp O       &kp P    
    &bhm LCTRL A &bhm LALT S &bhm LGUI D &bhm LSHIFT F &kp G      &kp H   &bhm RSHIFT J  &bhm RGUI K &bhm RALT L &bhm RCTRL SEMI 
@@ -41,7 +49,7 @@
 // |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |
 // | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |
 // |  '  |     |     |     |     |   |     |     |     |     |     |
-//             | GUI |     | SPC |   | ENT |     | ESC |
+//             | GUI |     | SPC |ENT| SPC |     | ESC |
                         bindings = <
    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
@@ -55,7 +63,7 @@
 // |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | 
 // |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |
 // |  "  |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |
-//             | GUI |     | SPC |   | ENT |     | ESC |
+//             | GUI |     | SPC |ENT| SPC |     | ESC |
                         bindings = <
    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR 
    &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH 
