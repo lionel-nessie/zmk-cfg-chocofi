@@ -17,6 +17,11 @@
             key-positions = <32 33>;
             bindings = <&kp RET>;
           };
+          combo_esc {
+            timeout-ms = <150>;
+            key-positions = <14 15>;
+            bindings = <&kp ESC>;
+          };
         };
         behaviors {
             bhm: balanced_homerow_mods {
@@ -34,22 +39,22 @@
                 default_layer {
 // ---------------------------------------------------------------------------------------------------------------------
 // |   Q        |      W     |       E    |      R     |  T  |   |  Y  |     U      |     I     |     O     |     P     |
-// |   A, CTRL  |    S, ALT  |    D, GUI  |  F, SHIFT  |  G  |   |  H  |  J, SHIFT  |  K, GUI   |  L, ALT   |  ;, CTRL  |
+// |   A, CTRL  |    S, ALT  |    D, GUI  |  F, SHIFT  |  G  |ESC|  H  |  J, SHIFT  |  K, GUI   |  L, ALT   |  ;, CTRL  |
 // |   Z        |      X     |       C    |      V     |  B  |   |  N  |     M      |     ,     |     .     |     /     |
-//                           |    BSPC    |     LWR    | SPC |ENT| SPC |    RSE     |    ALT    |
+//                           |    BSPC    |     LWR    | SPC |ENT| SPC |    RSE     |    TAB    |
                         bindings = <
    &kp Q        &kp W       &kp E       &kp R         &kp T      &kp Y   &kp U          &kp I       &kp O       &kp P    
    &bhm LCTRL A &bhm LALT S &bhm LGUI D &bhm LSHIFT F &kp G      &kp H   &bhm RSHIFT J  &bhm RGUI K &bhm RALT L &bhm RCTRL SEMI 
    &kp Z        &kp X       &kp C       &kp V         &kp B      &kp N   &kp M          &kp COMMA   &kp DOT     &kp FSLH 
-                            &kp BSPC    &mo 1         &kp SPACE  &kp SPACE &mo 2          &kp ESC
+                            &kp BSPC    &mo 1         &kp SPACE  &kp SPACE &mo 2          &kp TAB
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |
-// | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |
+// | BT1 | BT2 | BT3 | BT4 | BT5 |ESC| LFT | DWN |  UP | RGT |     |
 // |  '  |     |     |     |     |   |     |     |     |     |     |
-//             | GUI |     | SPC |ENT| SPC |     | ESC |
+//             | GUI |     | SPC |ENT| SPC |     | TAB |
                         bindings = <
    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0
    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
@@ -61,9 +66,9 @@
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | 
-// |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |
+// |     |     |     |     |     |ESC|  -  |  =  |  [  |  ]  |  \  |
 // |  "  |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |
-//             | GUI |     | SPC |ENT| SPC |     | ESC |
+//             | GUI |     | SPC |ENT| SPC |     | TAB |
                         bindings = <
    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR 
    &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH 
